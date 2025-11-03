@@ -1,194 +1,138 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Über uns – SheVolunteers</title>
-<style>
-  /* --- BASISSTIL --- */
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #fff;
-    line-height: 1.6;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 10px 25px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .logo img {
-    width: 180px;
-    height: auto;
-  }
-
-  /* --- NAVIGATION DESKTOP --- */
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-  }
-
-  nav ul li {
-    position: relative;
-  }
-
-  nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    font-size: 17px;
-  }
-
-  nav ul li a:hover {
-    color: #E07BAE;
-  }
-
-  /* --- DROPDOWNS --- */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 2000;
-    padding: 10px 0;
-  }
-
-  .dropdown-content a {
-    display: block;
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  /* --- HAMBURGER-MENÜ --- */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  .hamburger span {
-    height: 3px;
-    width: 25px;
-    background: #333;
-    margin: 4px 0;
-    border-radius: 2px;
-  }
-
-  /* --- MOBILE NAVIGATION --- */
-  @media (max-width: 900px) {
-    nav ul {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      left: 0;
-      background: white;
-      width: 100%;
-      padding: 10px 0;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      text-align: left;
+  <meta charset="UTF-8">
+  <title>Über uns – SheVolunteers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #fff;
+      line-height: 1.6;
     }
 
-    nav ul.show {
+    header {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 10px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    nav ul li {
-      text-align: left;
-      margin: 5px 0;
-      padding-left: 20px;
+    .logo img {
+      width: 200px;
+      height: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
     }
 
     nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    nav ul li a:hover {
+      color: #E07BAE;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 30px;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 50px;
+      font-size: 24px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      font-size: 17px;
+      color: #333;
+    }
+
+    ul {
+      margin-left: 20px;
+      color: #333;
+    }
+
+    footer {
+      background-color: #f9f9f9;
+      padding: 60px 100px 30px;
+      font-family: Arial, sans-serif;
+      color: #333;
+      border-top: 1px solid #eee;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .footer-logo img {
+      width: 180px;
+      height: auto;
+    }
+
+    .footer-column h4 {
       font-size: 18px;
-      display: block;
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: #333;
     }
 
-    .hamburger {
-      display: flex;
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
     }
 
-    /* Untermenüs mobil */
-    .dropdown-content {
-      position: static;
-      box-shadow: none;
-      padding-left: 20px;
-      display: none;
+    .footer-column ul li {
+      margin-bottom: 8px;
     }
 
-    .dropdown-content a {
-      font-size: 16px;
-      padding-left: 20px;
-      display: block;
+    .footer-column ul li a {
+      text-decoration: none;
+      color: #E07BAE;
+      transition: color 0.3s;
     }
 
-    .dropdown.show .dropdown-content {
-      display: block;
+    .footer-column ul li a:hover {
+      color: #b8528d;
     }
-  }
 
-  /* --- INHALT --- */
-  .content {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 0 30px;
-  }
-
-  h1 {
-    color: #333;
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  h2 {
-    color: #333;
-    margin-top: 50px;
-    font-size: 24px;
-  }
-
-  p {
-    margin-bottom: 16px;
-    font-size: 17px;
-  }
-
-  ul {
-    margin-left: 20px;
-  }
-
-  /* --- FOOTER --- */
-  footer {
-    background-color: #f9f9f9;
-    padding: 40px 20px;
-    color: #333;
-    border-top: 1px solid #eee;
-    text-align: center;
-  }
-
-  .footer-bottom p {
-    margin: 8px 0;
-    font-size: 14px;
-    color: #777;
-  }
-</style>
+    .footer-bottom {
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
 </head>
 
 <body>
@@ -198,37 +142,12 @@
     <div class="logo">
       <a href="index.html"><img src="bilder/LOGO.111.png" alt="SheVolunteers Logo"></a>
     </div>
-
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-
     <nav>
-      <ul id="nav-links">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="überuns.html" style="color:#E07BAE;">Über uns</a></li>
         <li><a href="ehrenamt.html">Engagement</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
-
-        <li class="dropdown">
-          <a href="#" onclick="toggleDropdown(event)">Angebot ▾</a>
-          <div class="dropdown-content">
-            <a href="blog.html">Blog</a>
-            <a href="whatsapp.html">WhatsApp</a>
-            <a href="https://www.instagram.com/shevolunteers.de" target="_blank">Instagram</a>
-            <a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a>
-          </div>
-        </li>
-
-        <li><a href="warumshevolunteers.html">Warum SheVolunteers?</a></li>
-
-        <li class="dropdown">
-          <a href="#" onclick="toggleDropdown(event)">Rechtliches ▾</a>
-          <div class="dropdown-content">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutzerklaerung.html">Datenschutzerklärung</a>
-          </div>
-        </li>
       </ul>
     </nav>
   </header>
@@ -248,36 +167,67 @@
 
     <h2>Was macht SheVolunteers?</h2>
     <ul>
-      <li><strong>Austausch & Community:</strong> Über WhatsApp, Blog, Instagram und LinkedIn findet ein lebendiger Dialog zu Themen wie Kultur, Selbstfürsorge und Alltag im Ausland statt.</li>
+      <li><strong>Austausch & Community:</strong> Über eine zentrale WhatsApp-Gruppe sowie Social-Media-Kanäle (Instagram, Blog, LinkedIn) findet ein lebendiger Dialog zu Themen wie Kultur, Selbstfürsorge und Alltag im Ausland statt.</li>
       <li><strong>Lokale Treffen & Support:</strong> In verschiedenen Ländern und Städten entstehen Gruppen, in denen sich Mitglieder kennenlernen, vernetzen und Freundschaften knüpfen können.</li>
       <li><strong>Empowerment & Sichtbarkeit:</strong> Auf Social Media teilt SheVolunteers inspirierende Geschichten und Interviews von Frauen, die ihren Auslandsaufenthalt bereits erlebt haben – um andere zu motivieren und Mut zu machen.</li>
     </ul>
 
-    <h2>Unsere Vision</h2>
-    <p>SheVolunteers möchte eine Bewegung schaffen, die Frauen weltweit miteinander verbindet und ihnen das Gefühl gibt, nicht allein zu sein. Wir glauben an die Kraft von Gemeinschaft und gegenseitiger Unterstützung.</p>
+    <h2>Welche Vision verfolgt SheVolunteers?</h2>
+    <p>SheVolunteers möchte eine Bewegung schaffen, die Frauen weltweit miteinander verbindet und ihnen das Gefühl gibt, nicht allein zu sein.</p>
+    <p>Die Vision ist ein Netzwerk, in dem Frauen sich gegenseitig begleiten – ganz gleich, ob sie ihren Auslandsaufenthalt erst planen, mittendrin sind oder bereits wertvolle Erfahrungen gesammelt haben. Hier können junge Frauen voneinander lernen – und später selbst ihre Erfahrungen weitergeben.</p>
+    <p>So entsteht ein Kreislauf aus gegenseitiger Unterstützung, Austausch und Empowerment – getragen von Frauen, die ähnliche Wege gehen oder gegangen sind.</p>
+
+    <h2>Wer steckt hinter SheVolunteers?</h2>
+    <p>Nach einem Auslandssemester in Australien und einem freiwilligen sozialen Jahr in Costa Rica während ihres Psychologie-Studiums entstand bei Luna Lange der Wunsch, etwas Nachhaltiges zu schaffen: Eine Community, die Frauen auf ihrem Weg ins Ausland begleitet – mit all den Fragen, Gedanken und Emotionen, die dieser Schritt mit sich bringt.</p>
+    <p>Schnell fand sie Gleichgesinnte – Frauen, die sich während ihres eigenen Auslandsaufenthalts einen solchen Ort gewünscht hätten oder ihn sich heute für andere wünschen. Auch aktuelle Freiwillige im Ausland meldeten sich mit dem Wunsch, Teil dieser Bewegung zu werden.</p>
+    <p>So entwickelte sich SheVolunteers zu einer wachsenden Initiative aus über 50 engagierten Freiwilligen und Ehrenamtlichen, die ihre Erfahrungen teilen, andere begleiten und den Gedanken von SheVolunteers weitertragen.</p>
+
+    <h2>Unsere Mission</h2>
+    <p>SheVolunteers steht für eine Generation von Frauen, die sich gegenseitig stärken. Wir glauben an die Kraft von Gemeinschaft, Offenheit und Empathie. Unsere Mission ist es, Frauen zu ermutigen, sich zu vernetzen, voneinander zu lernen und den Austausch über Grenzen hinweg zu fördern.</p>
+    <p><em>Denn wer einmal Unterstützung erfahren hat, kann später selbst anderen zur Seite stehen – und so wächst eine Bewegung von Frauen, die sich weltweit füreinander stark machen.</em></p>
   </div>
 
   <!-- FOOTER -->
   <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="bilder/LOGO.111.png" alt="SheVolunteers Logo">
+      </div>
+
+      <div class="footer-column">
+        <h4>Angebot</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="whatsapp.html">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/shevolunteers.de" target="_blank">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>SheVolunteers</h4>
+        <ul>
+          <li><a href="überuns.html">Über uns</a></li>
+          <li><a href="warumshevolunteers.html">Warum SheVolunteers?</a></li>
+          <li><a href="ehrenamt.html">Engagement</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="footer-bottom">
       <p>Website made with ♥ by SheVolunteers Team</p>
       <p>© 2025 SheVolunteers. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
-
-  <!-- SCRIPT -->
-  <script>
-    function toggleMenu() {
-      const navLinks = document.getElementById('nav-links');
-      navLinks.classList.toggle('show');
-    }
-
-    function toggleDropdown(event) {
-      event.preventDefault();
-      const parent = event.target.parentElement;
-      parent.classList.toggle('show');
-    }
-  </script>
 
 </body>
 </html>
