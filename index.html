@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>SheVolunteers – Frauen stärken Frauen weltweit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -44,6 +45,7 @@
       text-decoration: none;
       color: #333;
       font-weight: 600;
+      font-size: 18px;
     }
 
     nav ul li a:hover {
@@ -55,8 +57,8 @@
       display: none;
       flex-direction: column;
       cursor: pointer;
-      width: 25px;
-      height: 20px;
+      width: 28px;
+      height: 22px;
       justify-content: space-between;
     }
 
@@ -214,6 +216,7 @@
         width: 160px;
       }
 
+      /* Menü versteckt standardmäßig */
       nav ul {
         flex-direction: column;
         gap: 0;
@@ -228,14 +231,17 @@
         z-index: 99;
       }
 
+      /* Sichtbar, wenn geöffnet */
       nav ul.active {
         display: flex;
       }
 
       nav ul li a {
         display: block;
-        padding: 12px 20px;
+        padding: 15px 20px;
         border-top: 1px solid #eee;
+        font-size: 20px;
+        text-align: center;
       }
 
       .menu-toggle {
@@ -247,36 +253,41 @@
       }
 
       .hero h1 {
-        font-size: 32px;
+        font-size: 36px;
       }
 
       .hero p {
+        font-size: 18px;
+      }
+
+      .hero a.button {
         font-size: 16px;
+        padding: 12px 30px;
       }
 
       footer {
-        padding: 40px 20px;
+        padding: 30px 20px;
       }
 
+      /* Footer stark vereinfacht für Handy */
       .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
 
       .footer-logo {
-        text-align: center;
+        margin-bottom: 20px;
       }
 
-      .footer-column h4 {
-        text-align: center;
-      }
-
-      .footer-column ul {
-        text-align: center;
+      .footer-column {
+        display: none; /* Footer-Links ausblenden, da sie über Menü erreichbar sind */
       }
 
       .footer-bottom {
-        font-size: 12px;
+        font-size: 13px;
+        color: #999;
       }
     }
   </style>
@@ -289,17 +300,25 @@
     <div class="logo">
       <a href="index.html"><img src="bilder/LOGO.111.png" alt="SheVolunteers Logo"></a>
     </div>
+
     <div class="menu-toggle" id="menu-toggle">
       <div></div>
       <div></div>
       <div></div>
     </div>
+
     <nav>
       <ul id="menu">
         <li><a href="index.html" style="color:#E07BAE;">Home</a></li>
         <li><a href="überuns.html">Über uns</a></li>
         <li><a href="ehrenamt.html">Engagement</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="whatsapp.html">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/shevolunteers.de" target="_blank">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutzerklaerung.html">Datenschutzerklärung</a></li>
       </ul>
     </nav>
   </header>
@@ -323,8 +342,8 @@
         <ul>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="whatsapp.html">WhatsApp</a></li>
-          <li><a href="https://www.instagram.com/shevolunteers.de?igsh=MXVhb21kYmh3bDB2Zg==" target="_blank">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/shevolunteers.de">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/she-volunteers-community/">LinkedIn</a></li>
         </ul>
       </div>
 
@@ -353,6 +372,7 @@
     </div>
   </footer>
 
+  <!-- MENU SCRIPT -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
@@ -365,6 +385,7 @@
 
 </body>
 </html>
+
 
 
 
