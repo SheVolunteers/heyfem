@@ -139,8 +139,11 @@
       font-size: 16px;
     }
 
+    /* BUTTON */
     a.button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background-color: #E07BAE;
       color: white;
       text-decoration: none;
@@ -157,6 +160,15 @@
       background-color: white;
       color: #E07BAE;
       border: 2px solid #E07BAE;
+    }
+
+    .button .arrow {
+      margin-left: 10px;
+      transition: margin-left 0.3s ease;
+    }
+
+    a.button:hover .arrow {
+      margin-left: 18px;
     }
 
     /* BILD UNTEN */
@@ -321,7 +333,9 @@
     </div>
 
     <div style="text-align:center;">
-      <a href="kontakt.html" class="button">Werde Teil der Community</a>
+      <a href="kontakt.html" class="button">
+        Werde Teil der Community <span class="arrow">→</span>
+      </a>
     </div>
 
   </main>
@@ -369,6 +383,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
