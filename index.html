@@ -5,10 +5,10 @@
   <title>SheVolunteers – Frauen stärken Frauen weltweit</title>
 
   <link rel="icon" href="bilder/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="bilder/favicon.png">
-<meta property="og:image" content="https://www.shevolunteers.org/bilder/favicon.png">
-<meta property="og:title" content="SheVolunteers – Frauen stärken Frauen">
-<meta property="og:description" content="Eine Community von Frauen, die sich gegenseitig inspirieren und unterstützen.">
+  <link rel="apple-touch-icon" href="bilder/favicon.png">
+  <meta property="og:image" content="https://www.shevolunteers.org/bilder/favicon.png">
+  <meta property="og:title" content="SheVolunteers – Frauen stärken Frauen">
+  <meta property="og:description" content="Eine Community von Frauen, die sich gegenseitig inspirieren und unterstützen.">
 
   <style>
     body {
@@ -98,8 +98,11 @@
       color: #f8f8f8;
     }
 
+    /* --- BUTTON MIT SVG-PFEIL --- */
     .hero a.button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background-color: #E07BAE;
       color: white;
       text-decoration: none;
@@ -107,17 +110,8 @@
       border-radius: 50px;
       font-size: 18px;
       font-weight: bold;
-      position: relative;
       transition: all 0.3s ease;
-    }
-
-    .hero a.button::after {
-      content: '→';
-      color: white;
-      font-weight: bold;
-      margin-left: 10px;
-      font-size: 18px;
-      vertical-align: middle;
+      border: 2px solid transparent;
     }
 
     .hero a.button:hover {
@@ -126,8 +120,15 @@
       border: 2px solid #E07BAE;
     }
 
-    .hero a.button:hover::after {
-      color: #E07BAE;
+    .button .arrow {
+      margin-left: 10px;
+      transition: transform 0.3s ease, fill 0.3s ease;
+      fill: white; /* Standardfarbe */
+    }
+
+    a.button:hover .arrow {
+      transform: translateX(6px);
+      fill: #E07BAE; /* Farbe beim Hover */
     }
 
     /* --- FOOTER --- */
@@ -204,10 +205,6 @@
       nav ul {
         flex-direction: column;
         gap: 10px;
-        width: 100%;
-      }
-
-      nav ul li {
         width: 100%;
       }
 
@@ -291,7 +288,12 @@
   <section class="hero">
     <h1>Willkommen bei SheVolunteers</h1>
     <p>Eine Community von Frauen, die Frauen weltweit auf ihrem Weg ins Ausland begleiten, unterstützen und inspirieren.</p>
-    <a href="kontakt.html" class="button">Werde Teil der Community</a>
+    <a href="kontakt.html" class="button">
+      Werde Teil der Community
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+        <path d="M9.29 6.71a1 1 0 0 1 1.42 0L16 12l-5.29 5.29a1 1 0 1 1-1.42-1.42L13.17 12 9.29 8.12a1 1 0 0 1 0-1.41z"/>
+      </svg>
+    </a>
   </section>
 
   <!-- FOOTER -->
@@ -306,7 +308,7 @@
         <ul>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="whatsapp.html">WhatsApp</a></li>
-          <li><a href="https://www.instagram.com/shevolunteers.de?igsh=MXVhb21kYmh3bDB2Zg==" target="_blank">Instagram</a></li>
+          <li><a href="https://www.instagram.com/shevolunteers.de" target="_blank">Instagram</a></li>
           <li><a href="https://www.linkedin.com/company/she-volunteers-community/" target="_blank">LinkedIn</a></li>
         </ul>
       </div>
@@ -338,6 +340,7 @@
 
 </body>
 </html>
+
 
 
 
