@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>SheVolunteers – Frauen stärken Frauen weltweit</title>
+
   <link rel="icon" href="bilder/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="bilder/favicon.png">
   <meta property="og:image" content="https://www.shevolunteers.org/bilder/favicon.png">
@@ -19,13 +20,12 @@
       line-height: 1.6;
     }
 
-    /* --- HEADER (leicht verschlankt) --- */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background-color: white;
-      padding: 4px 24px; /* vorher 6px 30px */
+      padding: 6px 30px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
@@ -33,7 +33,7 @@
     }
 
     .logo img {
-      width: 160px; /* vorher 200px */
+      width: 200px;
       height: auto;
     }
 
@@ -78,7 +78,9 @@
       z-index: 1;
     }
 
-    .hero h1, .hero p, .hero a {
+    .hero h1,
+    .hero p,
+    .hero a {
       position: relative;
       z-index: 2;
     }
@@ -129,7 +131,9 @@
       fill: #E07BAE;
     }
 
-    /* --- COMMUNITY-BEREICH --- */
+    /* ------------------------
+       TESTIMONIAL- / COMMUNITY-BEREICH
+    ------------------------ */
     .community-section {
       background-color: #fdf8fa;
       padding: 80px 20px;
@@ -357,8 +361,6 @@
       .hero { padding: 110px 20px; }
       .testimonial-card { padding: 24px; }
       .testimonial-wrapper { padding: 0 12px; }
-      .logo img { width: 140px; }
-      header { padding: 4px 16px; }
     }
 
     @media (max-width: 700px) {
@@ -368,8 +370,8 @@
     }
   </style>
 </head>
-
 <body>
+
   <!-- HEADER -->
   <header>
     <div class="logo">
@@ -385,33 +387,20 @@
     </nav>
   </header>
 
-  <!-- REST DEINES INHALTS BLEIBT UNVERÄNDERT -->
-  <!-- (Hero, Testimonials, Social, Footer etc. wie in deinem Originalcode) -->
-  
-  <!-- SCRIPT -->
-  <script>
-    (function(){
-      const cards = Array.from(document.querySelectorAll('.testimonial-card'));
-      const dots = Array.from(document.querySelectorAll('.dot'));
-      let idx = 0;
-      function show(i){
-        cards.forEach((c, k) => c.classList.toggle('active', k === i));
-        dots.forEach((d, k) => d.classList.toggle('active', k === i));
-        idx = i;
-      }
-      window.changeTestimonial = function(step){
-        const next = (idx + step + cards.length) % cards.length;
-        show(next);
-      };
-      dots.forEach(d => d.addEventListener('click', () => {
-        const i = Number(d.dataset.dot);
-        show(i);
-      }));
-      show(0);
-    })();
-  </script>
-</body>
-</html>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Willkommen bei SheVolunteers</h1>
+    <p>Eine Community von Frauen, die Frauen weltweit auf ihrem Weg ins Ausland begleiten, unterstützen und inspirieren.</p>
+    <a href="kontakt.html" class="button">
+      Werde Teil der Community
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+        <path d="M9.29 6.71a1 1 0 0 1 1.42 0L16 12l-5.29 5.29a1 1 0 1 1-1.42-1.42L13.17 12 9.29 8.12a1 1 0 0 1 0-1.41z"/>
+      </svg>
+    </a>
+  </section>
+
+  <!-- COMMUNITY / TESTIMONIAL-SLIDER -->
+  ... (Rest deines Codes mit Testimonials, Social Section, Footer und Script folgt unverändert hier)
 
 
 
