@@ -467,10 +467,19 @@
   border-radius: 25px;
   max-width: 800px;
   width: 90%;
-  padding: 50px 80px; /* mehr Platz oben/unten */
-  min-height: 500px; /* Modal insgesamt höher */
+  padding: 50px 80px; /* oben kleiner! */
+  min-height: 50px;
   text-align: left;
   position: relative;
+  margin-bottom: 5px !important;
+  padding-top: 130px !important;
+  padding-bottom: 20px !important; /* kleiner machen */
+}
+
+.modal-content h2 {
+  margin-top: 0 !important;
+  margin-bottom: 5px !important; /* Abstand zum Untertitel */
+  padding: 0 !important;
 }
 
 .modal-button:hover {
@@ -506,10 +515,20 @@
   margin: 5px 0 0 0;
 }
 
+.modal-emoji {
+  text-align: center;
+  margin-bottom: 20px; /* Abstand zum Titel */
+}
+
+.modal-emoji img {
+  width: 120px;   /* Größe anpassen */
+  height: auto;
+}
+
 .modal-title {
   font-size: 24px;
   text-align: center;       /* horizontal zentrieren */
-  margin-bottom: 05px;
+  margin-bottom: 18px;
 }
 
 .modal-text {
@@ -526,13 +545,18 @@
   margin: 40px 0 30px;
 }
 
+.modal-button-wrapper {
+  text-align: center;  /* zentriert NUR den Button */
+  margin-top: 20px;
+}
+
 .modal-button {
-  display: block;
+  display: inline-block;
   text-align: center;
-  padding: 20px 30px;
+  padding: 12px 20px;
   background-color: #ffffff;
   color: #333;
-  border-radius: 8px;
+  border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
   margin-top: 20px;
@@ -585,6 +609,10 @@
   <div class="modal-content">
     <span class="modal-close" onclick="closeModal()">&times;</span>
 
+  <div class="modal-emoji">
+  <img src="bilder/dein-bild.png" alt="">
+</div>
+
     <h2 class="modal-title">Stories aus der Community</h2>
     <p class="modal-text">Entdecke Tipps und Geschichten anderer Frauen zu Gesundheit, Menstruation und Alltag.</p>
 
@@ -619,7 +647,9 @@
       </div>
     </div>
 
-    <a href="/stories" class="modal-button">Jetzt entdecken</a>
+    <div class="modal-button-wrapper">
+  <a href="#" class="modal-button">Jetzt entdecken</a>
+</div>
   </div>
 </div>
 </section>
