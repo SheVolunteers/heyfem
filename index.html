@@ -467,39 +467,10 @@
   border-radius: 25px;
   max-width: 800px;
   width: 90%;
-  padding: 50px 40px; /* mehr Platz oben/unten */
+  padding: 50px 80px; /* mehr Platz oben/unten */
   min-height: 500px; /* Modal insgesamt höher */
   text-align: left;
   position: relative;
-}
-
-.modal-subtitle {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 20px;
-  font-weight: normal;
-}
-
-.modal-text-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 Spalten */
-  gap: 20px 30px;
-  margin: 20px 0 40px; /* Abstand unten größer, Platz für Button */
-}
-
-.modal-button {
-  display: flex; /* wie action-button */
-  align-items: center;
-  justify-content: space-between;
-  padding: 25px 30px; /* gleiche Größe wie die Buttons */
-  background-color: #ffffff; /* weißer Hintergrund */
-  color: #333; /* Schriftfarbe wie bei action-buttons */
-  border: 1px solid #ddd;
-  border-radius: 8px; /* gleiche Rundung */
-  font-size: 1.2rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
 }
 
 .modal-button:hover {
@@ -516,6 +487,56 @@
   cursor: pointer;
 }
 
+.modal-text-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 19px;
+}
+
+.modal-circle {
+  width: 55px;
+  height: 55px;
+  background-color: #ff4d8b; /* rosa Kreis */
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px; /* etwas Abstand oben */
+}
+
+.modal-text-block p {
+  margin: 5px 0 0 0;
+}
+
+.modal-title {
+  font-size: 24px;
+  text-align: center;       /* horizontal zentrieren */
+  margin-bottom: 05px;
+}
+
+.modal-text {
+  text-align: center;   /* horizontal zentrieren */
+  margin-top: 0;      /* Abstand nach oben minimal */
+  margin-bottom: 20px;  /* Abstand nach unten */
+  line-height: 1.4;      /* dichter setzen, falls nötig */
+}
+
+.modal-text-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+  margin: 40px 0 30px;
+}
+
+.modal-button {
+  display: block;
+  text-align: center;
+  padding: 20px 30px;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 20px;
+}
   </style>
 </head>
 
@@ -551,7 +572,7 @@
 <section class="action-banner">
   <h2>Worauf hast du jetzt Lust?</h2>
   <div class="button-grid">
-   <a href="/#" class="action-button" data-modal="modal-stories">Stories entdecken <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
+   <a href="/#" class="action-button" data-modal="modal-stories-beispiel">Stories entdecken <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
    <a href="/#" class="action-button" data-modal="modal-podcast">Podcast hören <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
    <a href="/#" class="action-button" data-modal="modal-teilen">Deine Story teilen <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
    <a href="/#" class="action-button" data-modal="modal-community">Zur Community <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
@@ -559,15 +580,47 @@
    <a href="/#" class="action-button" data-modal="modal-socials">Mit uns connecten <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
   </div>
 
- <div id="modal-stories" class="modal">
+<!-- Beispiel Modal -->
+<div id="modal-stories-beispiel" class="modal">
   <div class="modal-content">
     <span class="modal-close" onclick="closeModal()">&times;</span>
 
-    <h2 class="modal-title">Stories entdecken</h2>
-    <p class="modal-text">Hier kannst du inspirierende Auslandserfahrungen entdecken.</p>
+    <h2 class="modal-title">Stories aus der Community</h2>
+    <p class="modal-text">Entdecke Tipps und Geschichten anderer Frauen zu Gesundheit, Menstruation und Alltag.</p>
 
-    <a href="/stories" class="modal-button">Jetzt ansehen</a>
-  </div>
+    <div class="modal-text-grid">
+      <div class="modal-text-block">
+        <div class="modal-circle"></div>
+        <div>
+          <strong>Persönliche Erlebnisse</strong>
+          <p>Inspiration aus dem Alltag anderer Frauen.</p>
+        </div>
+      </div>
+      <div class="modal-text-block">
+        <div class="modal-circle"></div>
+        <div>
+          <strong>Tipps für den Alltag</strong>
+          <p>Praktische Ratschläge zu Selbstfürsorge, Anti-Stress und Wohlbefinden.</p>
+        </div>
+      </div>
+      <div class="modal-text-block">
+        <div class="modal-circle"></div>
+        <div>
+          <strong>Frauengesundheit & Menstruation</strong>
+          <p>Erfahrungsaustausch zu Zyklus, Körperbewusstsein & mehr.</p>
+        </div>
+      </div>
+      <div class="modal-text-block">
+        <div class="modal-circle"></div>
+        <div>
+          <strong>Gemeinschaft & Unterstützung</strong>
+          <p>Finde Frauen, die ähnliche Wege gehen.</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="/stories" class="modal-button">Jetzt entdecken</a>
+  </div>
 </div>
 </section>
 
@@ -803,6 +856,34 @@ window.addEventListener('click', e => {
     e.target.style.display = 'none';
   }
 });
+
+function closeModal() {
+  document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+}
+
+// Buttons öffnen Modal
+document.querySelectorAll('.action-button[data-modal]').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const modalId = btn.getAttribute('data-modal');
+    document.getElementById(modalId).style.display = 'flex';
+  });
+});
+
+// Klick auf X schließt Modal
+document.querySelectorAll('.modal-close').forEach(btn => {
+  btn.addEventListener('click', () => {
+    closeModal();
+  });
+});
+
+// Klick außerhalb Modal schließt auch
+window.addEventListener('click', e => {
+  if (e.target.classList.contains('modal')) {
+    closeModal();
+  }
+});
+
 </script>
 </body>
 </html>
