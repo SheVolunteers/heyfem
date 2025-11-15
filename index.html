@@ -132,7 +132,7 @@
 
     /* --- TESTIMONIAL- / COMMUNITY-BEREICH --- */
     .community-section {
-      background-color: #fdf8fa;
+      background-color: #ffffff;
       padding: 80px 20px;
       text-align: center;
     }
@@ -176,7 +176,7 @@
     .testimonial-card {
       width: 720px;
       max-width: calc(100% - 120px);
-      background: white;
+      background: #fdf8fa;
       border-radius: 10px;
       padding: 36px 48px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.06);
@@ -389,6 +389,65 @@
         max-width: 100%;
       }
     }
+
+    .action-banner {
+  text-align: center;
+  padding: 60px 20px 00px 20px;
+  background-color: #fff; /* optional hellgrau als Hintergrund */
+}
+
+.action-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 gleiche Spalten */
+  gap: 30px 20px; /* 30px vertikal zwischen Reihen, 20px horizontal zwischen Buttons */
+  width: 100%; /* volle Breite */
+  max-width: 1200px; /* Gesamtbreite verringert, sodass links/rechts kleiner Abstand bleibt */
+  margin: 0 auto;
+  padding: 0 10px; /* kleiner Abstand zu den Seiten */
+  box-sizing: border-box;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Text links, Pfeil rechts */
+  padding: 20px 25px; 
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.3rem; 
+  min-width: 350px; /* Breite erhöhen */
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+  width: 100%; /* Buttons füllen ihre Grid-Spalte aus */
+  box-sizing: border-box;
+}
+
+.action-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.action-button .arrow {
+  margin-left: 0; /* da justify-content: space-between, Pfeil rechts */
+  font-size: 1.4rem; /* Größe des Pfeils */
+  transition: transform 0.3s ease, stroke 0.3s ease;
+  stroke: #333; /* Standardfarbe */
+}
+
+.action-button:hover .arrow {
+  transform: translateX(6px);
+  stroke: #E07BAE; /* Hover-Farbe wie Hero-Button */
+}
   </style>
 </head>
 
@@ -419,6 +478,60 @@
       </svg>
     </a>
   </section>
+
+<!-- Banner direkt unter dem Intro-Bild -->
+<section class="action-banner">
+  <h2>Worauf hast du jetzt Lust?</h2>
+  <div class="button-grid">
+    <a href="/blog" class="action-button">
+      Blog lesen
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="2" y1="0" x2="14" y2="12"></line>
+        <line x1="2" y1="24" x2="14" y2="12"></line>
+      </svg>
+    </a>
+
+    <a href="/podcast" class="action-button">
+      Podcast hören
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="2" y1="0" x2="14" y2="12"></line>
+        <line x1="2" y1="24" x2="14" y2="12"></line>
+      </svg>
+    </a>
+
+    <a href="/story" class="action-button">
+      Deine Story teilen
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="2" y1="0" x2="14" y2="12"></line>
+        <line x1="2" y1="24" x2="14" y2="12"></line>
+      </svg>
+    </a>
+
+    <a href="/community" class="action-button">
+      Zur Community
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="2" y1="0" x2="14" y2="12"></line>
+        <line x1="2" y1="24" x2="14" y2="12"></line>
+      </svg>
+    </a>
+
+    <a href="/mitmachen" class="action-button">
+      Aktiv werden
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="2" y1="0" x2="14" y2="12"></line>
+        <line x1="2" y1="24" x2="14" y2="12"></line>
+      </svg>
+    </a>
+
+    <a href="/socials" class="action-button">
+      Unsere Socials entdecken
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="2" y1="0" x2="14" y2="12"></line>
+        <line x1="2" y1="24" x2="14" y2="12"></line>
+      </svg>
+    </a>
+  </div>
+</section>
 
   <!-- COMMUNITY / TESTIMONIAL-SLIDER -->
   <section class="community-section" aria-label="Erfahrungen aus der Community">
