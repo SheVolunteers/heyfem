@@ -568,6 +568,200 @@
 .modal-text-grid {
   flex-grow: 1;
 }
+
+body {
+    margin: 0;
+    font-family: 'Aperçu', sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+/* SECTION SPACING */
+.library-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+/* TITLE */
+.library-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #222;
+}
+
+/* CATEGORY FILTER */
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.filter-item {
+    background: #f7f4f4;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 35px;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Aperçu', sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* HOVER-EFFEKT */
+.filter-item:hover {
+    background: #ddd;
+}
+
+/* AKTIVER BUTTON → SCHWARZ + WEISS */
+.filter-item.active {
+    background: #000;
+    color: #fff;
+}
+
+/* CARDS */
+.cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-text {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-text h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-text p {
+    margin: 0;
+    color: #555;
+    font-size: 15px;
+}
+
+/* ------------------------- */
+/*  ⭐ HIER KOMMEN DIE 3 NEUEN CSS BLÖCKE ⭐ */
+/* ------------------------- */
+
+/* CATEGORY CONTENT – Wrapper */
+.category-content {
+    margin-top: 50px;
+}
+
+/* ------------------------- */
+/*  ⭐ NEUE CATEGORY-GROUP REGELN ⭐ */
+/* ------------------------- */
+
+/* Ganze Kategorie-Gruppen ausblenden */
+.category-group {
+    display: none;
+}
+
+/* Aktive Kategorie-Gruppe sichtbar machen */
+.category-group.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* ⭐ Neue Content-Box mit Hintergrundbildern ⭐ */
+.category-group .content-box {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px;
+    height: 180px;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: white;
+}
+
+/* Dunkler Verlauf für bessere Lesbarkeit */
+.category-group .content-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
+}
+
+/* Text über dem Bild */
+.category-group .content-box h3 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+/* ⭐ BILDER FÜR EINZELNE BOXEN ⭐ */
+
+/* Körperwissen */
+.bg-menstruation { background-image: url("/bilder/menstruation.jpg"); }
+.bg-periode { background-image: url("/bilder/periode.jpg"); }
+.bg-pms { background-image: url("/bilder/pms.jpg"); }
+.bg-verhuetung { background-image: url("/bilder/verhuetung.jpg"); }
+
+/* Mentale Gesundheit */
+.bg-stress { background-image: url("/bilder/stress.jpg"); }
+.bg-bodyimage { background-image: url("/bilder/bodyimage.jpg"); }
+.bg-angst { background-image: url("/bilder/angst.jpg"); }
+.bg-achtsamkeit { background-image: url("/bilder/achtsamkeit.jpg"); }
+
+/* Beziehungen */
+.bg-gesundebeziehungen { background-image: url("/bilder/beziehungen.jpg"); }
+.bg-grenzen { background-image: url("/bilder/grenzen.jpg"); }
+.bg-dating { background-image: url("/bilder/dating.jpg"); }
+.bg-redflags { background-image: url("/bilder/redflags.jpg"); }
+
+/* Alltag & Identität */
+.bg-schule { background-image: url("/bilder/schule.jpg"); }
+.bg-alltagsstress { background-image: url("/bilder/alltag.jpg"); }
+.bg-selbstfindung { background-image: url("/bilder/selbstfindung.jpg"); }
+.bg-worklife { background-image: url("/bilder/worklife.jpg"); }
+
+/* Community & Support */
+.bg-anonym { background-image: url("/bilder/anonym.jpg"); }
+.bg-erfahrungen { background-image: url("/bilder/erfahrungen.jpg"); }
+.bg-peer { background-image: url("/bilder/peer.jpg"); }
+.bg-events { background-image: url("/bilder/events.jpg"); }
+
+/* Sicherheit */
+.bg-digital { background-image: url("/bilder/digital.jpg"); }
+.bg-rechte { background-image: url("/bilder/rechte.jpg"); }
+.bg-belaestigung { background-image: url("/bilder/belaestigung.jpg"); }
+.bg-hilfe { background-image: url("/bilder/hilfe.jpg"); }
+
+
   </style>
 </head>
 
@@ -959,6 +1153,151 @@
 </div>
 </section>
 
+<section class="library-section">
+
+    <h1 class="library-title">Wähle dein Thema aus</h1>
+
+    <div class="category-filter">
+        <button class="filter-item active" data-target="körperwissen">Körperwissen</button>
+        <button class="filter-item" data-target="mental">Mentale Gesundheit</button>
+        <button class="filter-item" data-target="beziehungen">Beziehungen</button>
+        <button class="filter-item" data-target="alltag">Alltag & Identität</button>
+        <button class="filter-item" data-target="community">Community & Support</button>
+        <button class="filter-item" data-target="sicherheit">Sicherheit</button>
+    </div>
+
+    <div class="category-content">
+
+        <!-- ⭐ 1: KÖRPERWISSEN ⭐ -->
+        <div class="category-group active" id="körperwissen">
+
+            <div class="content-box bg-menstruation">
+                <h3>Menstruation & Zyklus verstehen</h3>
+            </div>
+
+            <div class="content-box bg-periode">
+                <h3>Erste Periode / Periodenstarter</h3>
+            </div>
+
+            <div class="content-box bg-pms">
+                <h3>PMS & PMDS</h3>
+            </div>
+
+            <div class="content-box bg-verhuetung">
+                <h3>Verhütung & Hormonbalance</h3>
+            </div>
+
+        </div>
+
+        <!-- ⭐ 2: MENTALE GESUNDHEIT ⭐ -->
+        <div class="category-group" id="mental">
+
+            <div class="content-box bg-stress">
+                <h3>Stress & Überforderung</h3>
+            </div>
+
+            <div class="content-box bg-bodyimage">
+                <h3>Selbstwert & Body Image</h3>
+            </div>
+
+            <div class="content-box bg-angst">
+                <h3>Angst & Sorgen</h3>
+            </div>
+
+            <div class="content-box bg-achtsamkeit">
+                <h3>Selbstfürsorge & Achtsamkeit</h3>
+            </div>
+
+        </div>
+
+        <!-- ⭐ 3: BEZIEHUNGEN ⭐ -->
+        <div class="category-group" id="beziehungen">
+
+            <div class="content-box bg-gesundebeziehungen">
+                <h3>Gesunde Beziehungen</h3>
+            </div>
+
+            <div class="content-box bg-grenzen">
+                <h3>Kommunikation & Grenzen</h3>
+            </div>
+
+            <div class="content-box bg-dating">
+                <h3>Dating & erste Beziehung</h3>
+            </div>
+
+            <div class="content-box bg-redflags">
+                <h3>Liebeskummer & Red Flags</h3>
+            </div>
+
+        </div>
+
+        <!-- ⭐ 4: ALLTAG & IDENTITÄT ⭐ -->
+        <div class="category-group" id="alltag">
+
+            <div class="content-box bg-schule">
+                <h3>Schule / Uni</h3>
+            </div>
+
+            <div class="content-box bg-alltagsstress">
+                <h3>Stress im Alltag</h3>
+            </div>
+
+            <div class="content-box bg-selbstfindung">
+                <h3>Selbstfindung & Ziele</h3>
+            </div>
+
+            <div class="content-box bg-worklife">
+                <h3>Work-Life-Balance & Zukunft</h3>
+            </div>
+
+        </div>
+
+        <!-- ⭐ 5: COMMUNITY & SUPPORT ⭐ -->
+        <div class="category-group" id="community">
+
+            <div class="content-box bg-anonym">
+                <h3>Anonyme Fragen</h3>
+            </div>
+
+            <div class="content-box bg-erfahrungen">
+                <h3>Erfahrungsberichte</h3>
+            </div>
+
+            <div class="content-box bg-peer">
+                <h3>Peer-Support</h3>
+            </div>
+
+            <div class="content-box bg-events">
+                <h3>Events & Workshops</h3>
+            </div>
+
+        </div>
+
+        <!-- ⭐ 6: SICHERHEIT ⭐ -->
+        <div class="category-group" id="sicherheit">
+
+            <div class="content-box bg-digital">
+                <h3>Digitale Sicherheit</h3>
+            </div>
+
+            <div class="content-box bg-rechte">
+                <h3>Körperrechte</h3>
+            </div>
+
+            <div class="content-box bg-belaestigung">
+                <h3>Belästigung & Warnsignale</h3>
+            </div>
+
+            <div class="content-box bg-hilfe">
+                <h3>Hilfe bekommen</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
   <!-- COMMUNITY / TESTIMONIAL-SLIDER -->
   <section class="community-section" aria-label="Erfahrungen aus der Community">
     <h2>Frauen fühlen sich sicherer, informierter und verstanden</h2>
@@ -1220,6 +1559,26 @@ window.addEventListener('click', e => {
 });
 
 </script>
+
+<script>
+document.querySelectorAll('.filter-item').forEach(button => {
+    button.addEventListener('click', () => {
+
+        document.querySelectorAll('.filter-item').forEach(btn =>
+            btn.classList.remove('active')
+        );
+        button.classList.add('active');
+
+        document.querySelectorAll('.category-group').forEach(group =>
+            group.classList.remove('active')
+        );
+
+        const target = button.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
+    });
+});
+</script>
+
 </body>
 </html>
 
