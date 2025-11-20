@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>heyfem! – Frauen stärken Frauen weltweit</title>
+  <title>heyfem! – Frauen stärken Frauen</title>
   <link rel="icon" href="bilder/heyfem-vorschau.jpg" type="image/png">
   <link rel="apple-touch-icon" href="bilder/heyfem-vorschau.jpg">
   <meta property="og:image" content="https://www.heyfem.org/bilder/heyfem-vorschau.jpg">
@@ -57,24 +57,15 @@
     /* --- HERO-BEREICH --- */
     .hero {
       position: relative;
-      text-align: center;
-      padding: 180px 20px;
-      color: white;
-      background-image: url('bilder/shevolunteers-quer.jpg');
+      text-align: left;
+      padding: 130px 40px 100px 40px;
+      color: #333;
+      background-image: url('bilder/hehe.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.45);
-      z-index: 1;
+      background-color: #fff;
+      padding-left: 120px;
     }
 
     .hero h1,
@@ -82,19 +73,26 @@
     .hero a {
       position: relative;
       z-index: 2;
+      max-width: 800px;
+      margin-left: 0;  /* Kein zusätzlicher Abstand */
     }
 
     .hero h1 {
-      font-size: 48px;
-      color: #fff;
-      margin-bottom: 20px;
+      font-size: 50px; /* Größerer Titel */
+  font-weight: 700; /* Fett */
+  color: #333;
+  margin-bottom: 15px;
+  max-width: 650px; /* Maximale Breite für Titel */
+  line-height: 1.2; /* Mehr Zeilenabstand, um den Titel besser lesbar zu machen */
     }
 
     .hero p {
       font-size: 20px;
-      max-width: 700px;
+      max-width: 650px;
       margin: 0 auto 40px;
-      color: #f8f8f8;
+      color: #444;
+      margin-left: 0;
+      line-height: 1.5;
     }
 
     /* --- BUTTON MIT PFEIL --- */
@@ -111,6 +109,7 @@
       font-weight: bold;
       transition: all 0.3s ease;
       border: 2px solid transparent;
+      margin-left: 0;
     }
 
     .hero a.button:hover {
@@ -568,6 +567,200 @@
 .modal-text-grid {
   flex-grow: 1;
 }
+
+body {
+    margin: 0;
+    font-family: 'Aperçu', sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+/* SECTION SPACING */
+.library-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+/* TITLE */
+.library-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #222;
+}
+
+/* CATEGORY FILTER */
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.filter-item {
+    background: #f7f4f4;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 35px;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Aperçu', sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* HOVER-EFFEKT */
+.filter-item:hover {
+    background: #ddd;
+}
+
+/* AKTIVER BUTTON → SCHWARZ + WEISS */
+.filter-item.active {
+    background: #000;
+    color: #fff;
+}
+
+/* CARDS */
+.cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-text {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-text h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-text p {
+    margin: 0;
+    color: #555;
+    font-size: 15px;
+}
+
+/* ------------------------- */
+/*  ⭐ HIER KOMMEN DIE 3 NEUEN CSS BLÖCKE ⭐ */
+/* ------------------------- */
+
+/* CATEGORY CONTENT – Wrapper */
+.category-content {
+    margin-top: 50px;
+}
+
+/* ------------------------- */
+/*  ⭐ NEUE CATEGORY-GROUP REGELN ⭐ */
+/* ------------------------- */
+
+/* Ganze Kategorie-Gruppen ausblenden */
+.category-group {
+    display: none;
+}
+
+/* Aktive Kategorie-Gruppe sichtbar machen */
+.category-group.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* ⭐ Neue Content-Box mit Hintergrundbildern ⭐ */
+.category-group .content-box {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 20px;
+    height: 180px;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: white;
+}
+
+/* Dunkler Verlauf für bessere Lesbarkeit */
+.category-group .content-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
+}
+
+/* Text über dem Bild */
+.category-group .content-box h3 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+/* ⭐ BILDER FÜR EINZELNE BOXEN ⭐ */
+
+/* Körperwissen */
+.bg-menstruation { background-image: url("/bilder/menstruation.jpg"); }
+.bg-periode { background-image: url("/bilder/periode.jpg"); }
+.bg-pms { background-image: url("/bilder/pms.jpg"); }
+.bg-verhuetung { background-image: url("/bilder/verhuetung.jpg"); }
+
+/* Mentale Gesundheit */
+.bg-stress { background-image: url("/bilder/stress.jpg"); }
+.bg-bodyimage { background-image: url("/bilder/bodyimage.jpg"); }
+.bg-angst { background-image: url("/bilder/angst.jpg"); }
+.bg-achtsamkeit { background-image: url("/bilder/achtsamkeit.jpg"); }
+
+/* Beziehungen */
+.bg-gesundebeziehungen { background-image: url("/bilder/beziehungen.jpg"); }
+.bg-grenzen { background-image: url("/bilder/grenzen.jpg"); }
+.bg-dating { background-image: url("/bilder/dating.jpg"); }
+.bg-redflags { background-image: url("/bilder/redflags.jpg"); }
+
+/* Alltag & Identität */
+.bg-schule { background-image: url("/bilder/schule.jpg"); }
+.bg-alltagsstress { background-image: url("/bilder/alltag.jpg"); }
+.bg-selbstfindung { background-image: url("/bilder/selbstfindung.jpg"); }
+.bg-worklife { background-image: url("/bilder/worklife.jpg"); }
+
+/* Community & Support */
+.bg-anonym { background-image: url("/bilder/anonym.jpg"); }
+.bg-erfahrungen { background-image: url("/bilder/erfahrungen.jpg"); }
+.bg-peer { background-image: url("/bilder/peer.jpg"); }
+.bg-events { background-image: url("/bilder/events.jpg"); }
+
+/* Sicherheit */
+.bg-digital { background-image: url("/bilder/digital.jpg"); }
+.bg-rechte { background-image: url("/bilder/rechte.jpg"); }
+.bg-belaestigung { background-image: url("/bilder/belaestigung.jpg"); }
+.bg-hilfe { background-image: url("/bilder/hilfe.jpg"); }
+
+
   </style>
 </head>
 
@@ -589,8 +782,8 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Dein Safe Space beginnt hier</h1>
-    <p>heyfem! begleitet junge Frauen auf dem Weg zu Körperwissen, Offenheit und Austausch</p>
+    <h1>Mädchen stärken.<br>Zukunft stärken.</h1>
+    <p>heyfem! bietet schulbasierte Workshops zur körperlichen, emotionalen und sozialen Entwicklung von Mädchen.</p>
     <a href="kontakt.html" class="button">
       Werde Teil der Community
       <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
@@ -599,369 +792,136 @@
     </a>
   </section>
 
-<!-- Banner direkt unter dem Intro-Bild -->
-<section class="action-banner">
-  <h2>Worauf hast du jetzt Lust?</h2>
-  <div class="button-grid">
-   <a href="/#" class="action-button" data-modal="modal-stories-beispiel">Stories entdecken <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
-   <a href="/#" class="action-button" data-modal="modal-podcast">Podcast hören <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
-   <a href="/#" class="action-button" data-modal="modal-teilen">Deine Story teilen <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
-   <a href="/#" class="action-button" data-modal="modal-community">Zur Community <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
-   <a href="/#" class="action-button" data-modal="modal-engagieren">Engagieren <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
-   <a href="/#" class="action-button" data-modal="modal-socials">Mit uns connecten <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"> <line x1="2" y1="0" x2="14" y2="12"></line> <line x1="2" y1="24" x2="14" y2="12"></line> </svg> </a>
-  </div>
+<section class="library-section">
 
-<!-- Beispiel Modal -->
-<div id="modal-stories-beispiel" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <h1 class="library-title">Unsere Workshop-Themen</h1>
 
-    <h2 class="modal-title">Stories aus der Community</h2>
-    <p class="modal-text">Entdecke Tipps und Geschichten anderer Frauen zu Gesundheit, Menstruation und Alltag.</p>
-
-    <div class="modal-text-grid">
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="bilder/stories-beispiel1.jpg" alt="">
-        </div>
-        <div>
-          <strong>Persönliche Erlebnisse</strong>
-          <p>Inspiration aus dem Alltag anderer Frauen.</p>
-        </div>
-      </div>
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="bilder/stories-beispiel2.jpg" alt="">
-        </div>
-        <div>
-          <strong>Tipps für den Alltag</strong>
-          <p>Praktische Ratschläge zu Selbstfürsorge, Anti-Stress und Wohlbefinden.</p>
-        </div>
-      </div>
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="bilder/stories-beispiel3.jpg" alt="">
-        </div>
-        <div>
-          <strong>Frauengesundheit & Menstruation</strong>
-          <p>Erfahrungsaustausch zu Zyklus, Körperbewusstsein & mehr.</p>
-        </div>
-      </div>
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="bilder/stories-beispiel4.jpg" alt="">
-        </div>
-        <div>
-          <strong>Gemeinschaft & Unterstützung</strong>
-          <p>Finde Frauen, die ähnliche Wege gehen.</p>
-        </div>
-      </div>
+    <div class="category-filter">
+        <button class="filter-item active" data-target="körperwissen">Körperwissen</button>
+        <button class="filter-item" data-target="mental">Mentale Gesundheit</button>
+        <button class="filter-item" data-target="beziehungen">Beziehungen</button>
+        <button class="filter-item" data-target="alltag">Alltag & Identität</button>
+        <button class="filter-item" data-target="sicherheit">Sicherheit</button>
     </div>
 
-    <div class="modal-button-wrapper">
-  <a href="#" class="modal-button">Jetzt entdecken</a>
-</div>
+    <div class="category-content">
 
-  </div>
-</div>
+        <!-- ⭐ 1: KÖRPERWISSEN ⭐ -->
+        <div class="category-group active" id="körperwissen">
 
-<!-- Podcast Modal -->
-<div id="modal-podcast" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="content-box bg-menstruation">
+                <h3>Menstruation & Zyklus – verständlich erklärt</h3>
+            </div>
 
-    <h2 class="modal-title">Podcast hören</h2>
-    <p class="modal-text">Inspirierende Gespräche über Körper, Gesundheit & Female Empowerment.</p>
+            <div class="content-box bg-periode">
+                <h3>Körperveränderungen in der Pubertät</h3>
+            </div>
 
-    <div class="modal-text-grid">
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="bilder/pod1.jpg" alt="">
-        </div>
-        <div>
-          <strong>Demnächst</strong>
-          <p>Spannende Insights zu Frauengesundheit & Mental Health.</p>
-        </div>
-      </div>
+            <div class="content-box bg-pms">
+                <h3>Körpergefühl, Grenzen & Selbstbewusstsein</h3>
+            </div>
 
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="bilder/pod2.jpg" alt="">
-        </div>
-        <div>
-          <strong>Expertinnen-Talks</strong>
-          <p>Wissen direkt von Ärztinnen, Coaches & Gründerinnen.</p>
-        </div>
-      </div>
+            <div class="content-box bg-verhuetung">
+                <h3>Tabus & Scham abbauen</h3>
+            </div>
 
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="bilder/pod3.jpg" alt="">
-        </div>
-        <div>
-          <strong>Community-Themen</strong>
-          <p>Wir sprechen über Themen, die euch wirklich bewegen.</p>
-        </div>
-      </div>
+            <div class="content-box bg-hormone">
+                <h3>Hormone & Emotionen in der Pubertät</h3>
+            </div>
 
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="bilder/pod4.jpg" alt="">
         </div>
-        <div>
-          <strong>Fun & Real Talk</strong>
-          <p>Ehrliche Gespräche – humorvoll, offen & ohne Tabus.</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="modal-button-wrapper">
-      <a href="#" class="modal-button">Jetzt anhören</a>
-    </div>
+        <!-- ⭐ 2: MENTALE GESUNDHEIT ⭐ -->
+        <div class="category-group" id="mental">
 
-  </div>
-</div>
+            <div class="content-box bg-stress">
+                <h3>Stress & Überforderung</h3>
+            </div>
 
-<!-- Deine Story teilen Modal -->
-<div id="modal-teilen" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="content-box bg-bodyimage">
+                <h3>Selbstwert & Body Image</h3>
+            </div>
 
-    <h2 class="modal-title">Deine Story teilen</h2>
-    <p class="modal-text">Erzähle deine Erfahrungen und hilf anderen Frauen mit deinen Insights & deiner Geschichte.</p>
+            <div class="content-box bg-angst">
+                <h3>Angst & Sorgen</h3>
+            </div>
 
-    <div class="modal-text-grid">
+            <div class="content-box bg-achtsamkeit">
+                <h3>Selbstfürsorge & Achtsamkeit</h3>
+            </div>
 
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="teilen1.jpg" alt="">
         </div>
-        <div>
-          <strong>Deine Erfahrung zählt</strong>
-          <p>Teile Momente, die dich geprägt haben.</p>
-        </div>
-      </div>
 
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="teilen2.jpg" alt="">
-        </div>
-        <div>
-          <strong>Mut machen</strong>
-          <p>Inspiriere andere Frauen mit deiner Geschichte.</p>
-        </div>
-      </div>
+        <!-- ⭐ 3: BEZIEHUNGEN ⭐ -->
+        <div class="category-group" id="beziehungen">
 
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="teilen3.jpg" alt="">
-        </div>
-        <div>
-          <strong>Community stärken</strong>
-          <p>Gemeinsam schaffen wir mehr Offenheit & Support.</p>
-        </div>
-      </div>
+            <div class="content-box bg-gesundebeziehungen">
+                <h3>Gesunde Beziehungen</h3>
+            </div>
 
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="teilen4.jpg" alt="">
+            <div class="content-box bg-grenzen">
+                <h3>Kommunikation & Grenzen</h3>
+            </div>
+
+            <div class="content-box bg-dating">
+                <h3>Dating & erste Beziehung</h3>
+            </div>
+
+            <div class="content-box bg-redflags">
+                <h3>Liebeskummer & Red Flags</h3>
+            </div>
+
         </div>
-        <div>
-          <strong>Anonym möglich</strong>
-          <p>Teile so viel du möchtest – auch anonym.</p>
+
+        <!-- ⭐ 4: ALLTAG & IDENTITÄT ⭐ -->
+        <div class="category-group" id="alltag">
+
+            <div class="content-box bg-schule">
+                <h3>Schule / Uni</h3>
+            </div>
+
+            <div class="content-box bg-alltagsstress">
+                <h3>Stress im Alltag</h3>
+            </div>
+
+            <div class="content-box bg-selbstfindung">
+                <h3>Selbstfindung & Ziele</h3>
+            </div>
+
+            <div class="content-box bg-worklife">
+                <h3>Work-Life-Balance & Zukunft</h3>
+            </div>
+
         </div>
-      </div>
+
+        <!-- ⭐ 6: SICHERHEIT ⭐ -->
+        <div class="category-group" id="sicherheit">
+
+            <div class="content-box bg-digital">
+                <h3>Digitale Sicherheit</h3>
+            </div>
+
+            <div class="content-box bg-rechte">
+                <h3>Körperrechte</h3>
+            </div>
+
+            <div class="content-box bg-belaestigung">
+                <h3>Belästigung & Warnsignale</h3>
+            </div>
+
+            <div class="content-box bg-hilfe">
+                <h3>Hilfe bekommen</h3>
+            </div>
+
+        </div>
 
     </div>
 
-    <div class="modal-button-wrapper">
-      <a href="#" class="modal-button">Jetzt teilen</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- Community Modal -->
-<div id="modal-community" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-
-    <h2 class="modal-title">Zur Community</h2>
-    <p class="modal-text">Tritt unserer Community bei und verbinde dich mit Frauen weltweit – für Austausch, Support & Empowerment.</p>
-
-    <div class="modal-text-grid">
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="community1.jpg" alt="">
-        </div>
-        <div>
-          <strong>Austausch auf Augenhöhe</strong>
-          <p>Teile Erfahrungen & bekomme ehrlichen Support.</p>
-        </div>
-      </div>
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="community2.jpg" alt="">
-        </div>
-        <div>
-          <strong>Weltweit vernetzt</strong>
-          <p>Lerne Frauen aus verschiedenen Ländern kennen.</p>
-        </div>
-      </div>
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="community3.jpg" alt="">
-        </div>
-        <div>
-          <strong>Themen, die bewegen</strong>
-          <p>Von Zyklus & Gesundheit bis Alltag & Mental Health.</p>
-        </div>
-      </div>
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="community4.jpg" alt="">
-        </div>
-        <div>
-          <strong>Sicherer Raum</strong>
-          <p>Eine positive Umgebung – wertschätzend & respektvoll.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="modal-button-wrapper">
-      <a href="#" class="modal-button">Community beitreten</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- Engagieren Modal -->
-<div id="modal-engagieren" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-
-    <h2 class="modal-title">Engagieren</h2>
-    <p class="modal-text">Werde aktiv und unterstütze unsere Mission für Aufklärung, Female Empowerment & eine starke Community.</p>
-
-    <div class="modal-text-grid">
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="engagieren1.jpg" alt="">
-        </div>
-        <div>
-          <strong>Mithelfen & Mitgestalten</strong>
-          <p>Bringe deine Ideen ein und wirke an Projekten mit.</p>
-        </div>
-      </div>
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="engagieren2.jpg" alt="">
-        </div>
-        <div>
-          <strong>Freiwilliges Engagement</strong>
-          <p>Unterstütze Events, Workshops & Community-Aktionen.</p>
-        </div>
-      </div>
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="engagieren3.jpg" alt="">
-        </div>
-        <div>
-          <strong>Expertinnen willkommen</strong>
-          <p>Teile Wissen zu Gesundheit, Zyklus, Mental Health & mehr.</p>
-        </div>
-      </div>
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="engagieren4.jpg" alt="">
-        </div>
-        <div>
-          <strong>Impact schaffen</strong>
-          <p>Gemeinsam bewegen wir etwas für Mädchen & Frauen.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="modal-button-wrapper">
-      <a href="#" class="modal-button">Jetzt engagieren</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- Socials Modal -->
-<div id="modal-socials" class="modal">
-  <div class="modal-content">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
-
-    <h2 class="modal-title">Mit uns connecten</h2>
-    <p class="modal-text">Bleib auf dem Laufenden, werde Teil der Community und connecte dich mit uns auf allen Kanälen.</p>
-
-    <div class="modal-text-grid">
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="socials1.jpg" alt="">
-        </div>
-        <div>
-          <strong>Instagram</strong>
-          <p>Updates, Infos & Frauenstories aus der Community.</p>
-        </div>
-      </div>
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="socials2.jpg" alt="">
-        </div>
-        <div>
-          <strong>Podcast</strong>
-          <p>Spannende Gespräche über Zyklus, Körper & Empowerment.</p>
-        </div>
-      </div>
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="socials3.jpg" alt="">
-        </div>
-        <div>
-          <strong>Newsletter</strong>
-          <p>Monatliche Inspiration & Updates rund um Female Health.</p>
-        </div>
-      </div>
-
-      <div class="modal-text-block">
-        <div class="modal-circle">
-          <img src="socials4.jpg" alt="">
-        </div>
-        <div>
-          <strong>Community-Plattform</strong>
-          <p>Triff Frauen weltweit – Austausch auf Augenhöhe.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="modal-button-wrapper">
-      <a href="#" class="modal-button">Jetzt verbinden</a>
-    </div>
-
-  </div>
-</div>
 </section>
 
   <!-- COMMUNITY / TESTIMONIAL-SLIDER -->
   <section class="community-section" aria-label="Erfahrungen aus der Community">
-    <h2>Frauen fühlen sich sicherer, informierter und verstanden</h2>
+    <h2>Mädchen fühlen sich sicherer, informiert und gestärkt</h2>
     <div class="testimonial-wrapper" role="region" aria-live="polite">
       <button class="arrow-btn left" aria-label="Vorheriges" onclick="changeTestimonial(-1)">&#10094;</button>
 
@@ -989,18 +949,6 @@
         </div>
       </article>
 
-      <!-- Karte 3 -->
-      <article class="testimonial-card" data-index="1">
-        <div class="testimonial-top">
-          <img src="bilder/person3.jpg" alt="Profil Raja" class="profile-pic">
-          <p class="quote">„Ich finde heyfem! ein wirklich tolles Konzept! Gerade wenn man zum Beispiel länger im Ausland ist und krank wird und sich nicht ganz sicher ist wie dringend die Situation ist, finde ich es sehr gut Ansprechpartner zu haben, die vielleicht etwas ähnliches erlebt haben und das mit einem teilen können.“</p>
-        </div>
-        <div class="testimonial-meta">
-          <p class="testimonial-name">Raja (20)</p>
-          <p class="testimonial-role">Studentin in Aachen</p>
-        </div>
-      </article>
-
       <!-- Karte 4 -->
       <article class="testimonial-card" data-index="2">
         <div class="testimonial-top">
@@ -1010,18 +958,6 @@
         <div class="testimonial-meta">
           <p class="testimonial-name">Nadine (26)</p>
           <p class="testimonial-role">Studentin in Sustainability Science: Entrepreneurship, Leadership and Agengy</p>
-        </div>
-      </article>
-
-      <!-- Karte 5 -->
-      <article class="testimonial-card" data-index="2">
-        <div class="testimonial-top">
-          <img src="bilder/person5.jpg" alt="Profil Saniya" class="profile-pic">
-          <p class="quote">„Als junge Frau, die schon an einem neuen Ort war, freue ich mich sehr, dass es heyfem! gibt. Sich bei Themen rund um Körper und Menstruation zurechtzufinden, ist toll, aber manchmal auch schwierig. Es ist schön, dass Frauen hier ihre Erlebnisse teilen, miteinander sprechen und sich gegenseitig unterstützen können.“</p>
-        </div>
-        <div class="testimonial-meta">
-          <p class="testimonial-name">Saniya (23)</p>
-          <p class="testimonial-role">Ehemalige Freiwillige in Deutschland & Ingenieurin in Indien</p>
         </div>
       </article>
 
@@ -1045,8 +981,6 @@
       <span class="dot" data-dot="1"></span>
       <span class="dot" data-dot="2"></span>
       <span class="dot" data-dot="3"></span>
-      <span class="dot" data-dot="4"></span>
-      <span class="dot" data-dot="5"></span>
     </div>
   </section>
 
@@ -1083,13 +1017,6 @@
       </svg>
     </a>
 
-    <!-- Spotify -->
-    <a href="spotify.html" aria-label="Spotify">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M12 1.5C6.21 1.5 1.5 6.21 1.5 12S6.21 22.5 12 22.5 22.5 17.79 22.5 12 17.79 1.5 12 1.5zm4.68 15.76c-.19.3-.59.4-.89.21-2.43-1.48-5.49-1.82-9.09-1.02-.34.08-.68-.13-.76-.47s.13-.68.47-.76c3.84-.86 7.18-.47 9.84 1.13.3.19.4.59.21.89zm1.25-2.71c-.23.36-.7.47-1.06.24-2.79-1.71-7.04-2.21-10.34-1.23-.4.12-.83-.1-.95-.5-.12-.4.1-.83.5-.95 3.66-1.06 8.26-.51 11.38 1.39.36.23.47.7.24 1.06zm.11-2.91c-3.2-1.9-8.52-2.08-11.6-1.16-.47.14-.97-.12-1.11-.59-.14-.47.12-.97.59-1.11 3.43-1.03 9.17-.82 12.83 1.33.43.26.57.83.31 1.26-.27.44-.84.58-1.27.27z"/>
-      </svg>
-    </a>
-
   </div>
 </section>
 
@@ -1099,16 +1026,6 @@
 
     <div class="footer-logo">
       <img src="bilder/LOGO.111.png" alt="heyfem! Logo">
-    </div>
-
-    <div class="footer-column">
-      <h4>Angebot</h4>
-      <ul>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="whatsapp.html">WhatsApp</a></li>
-        <li><a href="https://www.instagram.com/wirsindheyfem" target="_blank">Instagram</a></li>
-        <li><a href="https://www.linkedin.com/company/hey-fem/" target="_blank">LinkedIn</a></li>
-      </ul>
     </div>
 
     <div class="footer-column">
@@ -1220,6 +1137,26 @@ window.addEventListener('click', e => {
 });
 
 </script>
+
+<script>
+document.querySelectorAll('.filter-item').forEach(button => {
+    button.addEventListener('click', () => {
+
+        document.querySelectorAll('.filter-item').forEach(btn =>
+            btn.classList.remove('active')
+        );
+        button.classList.add('active');
+
+        document.querySelectorAll('.category-group').forEach(group =>
+            group.classList.remove('active')
+        );
+
+        const target = button.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
+    });
+});
+</script>
+
 </body>
 </html>
 
