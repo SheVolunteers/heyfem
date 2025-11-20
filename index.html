@@ -58,7 +58,7 @@
     .hero {
       position: relative;
       text-align: left;
-      padding: 180px 40px;
+      padding: 130px 40px 100px 40px;
       color: #333;
       background-image: url('bilder/heyfem-pong.jpg');
       background-size: cover;
@@ -78,18 +78,21 @@
     }
 
     .hero h1 {
-      font-size: 35px;
-      color: #333;
-      margin-bottom: 20px;
-      margin-left: 0;
+      font-size: 50px; /* Größerer Titel */
+  font-weight: 700; /* Fett */
+  color: #333;
+  margin-bottom: 15px;
+  max-width: 650px; /* Maximale Breite für Titel */
+  line-height: 1.2; /* Mehr Zeilenabstand, um den Titel besser lesbar zu machen */
     }
 
     .hero p {
       font-size: 20px;
-      max-width: 700px;
+      max-width: 650px;
       margin: 0 auto 40px;
       color: #444;
       margin-left: 0;
+      line-height: 1.5;
     }
 
     /* --- BUTTON MIT PFEIL --- */
@@ -781,7 +784,7 @@ body {
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Wir schaffen Aufklärung und Empowerment</h1>
+    <h1>Wir schaffen Aufklärung <br>& Empowerment</h1> <!-- Titel in zwei Teile geteilt -->
     <p>Mit heyfem! bieten wir kostenfreie Workshops für Mädchen zu Körper, Pubertät und mentaler Gesundheit – direkt in Schulen.</p>
     <a href="kontakt.html" class="button">
       Werde Teil der Community
